@@ -85,3 +85,12 @@ wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
 webencodings @ file:///work/perseverance-python-buildout/croot/webencodings_1728385731103/work
 websocket-client @ file:///work/perseverance-python-buildout/croot/websocket-client_1728386934860/work
 wheel==0.45.1
+prophet==1.1.5
+pandas==2.2.0
+numpy==1.26.4
+matplotlib==3.8.3
+seaborn==0.13.2
+scikit-learn==1.4.1
+jupyterlab==4.3.4
+notebook==7.1.2
+ipykernel==6.29.3
