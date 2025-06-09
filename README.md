@@ -1,80 +1,82 @@
-# Time_Series_Analysis-Prophet
-Time_Series_Analysis-Prophet
-
 <div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">Time Series Analysis with Prophet</div>
 
-This repository contains a complete time series analysis project using Facebook Prophet. The project demonstrates forecasting techniques on the classic Airline Passengers dataset with proper data preprocessing, model training, evaluation, and visualization.
+# 1. Overview
+This project uses Facebook's Prophet library to perform time series analysis and forecasting on stock price data. The implementation is designed to be simple and beginner-friendly while maintaining best practices.
 
-## 1. Project Structure
+# 2. Features
+- Downloads historical stock price data using yfinance
+- Creates future price predictions using Prophet
+- Generates visualizations of forecasts and trends
+- Handles data validation and error logging
+- Saves results as high-quality PNG images
 
-- `data/`: Contains all datasets
-  - `raw/`: Original unmodified datasets
-  - `processed/`: Cleaned and preprocessed datasets
-- `notebooks/`: Jupyter notebooks for exploratory analysis and modeling
-- `src/`: Source code modules
-  - `data/`: Scripts for data acquisition and preprocessing
-  - `models/`: Scripts for model creation and evaluation 
-  - `visualization/`: Scripts for creating visualizations
-- `models/`: Saved model artifacts and forecasts
-- `results/`: Visualizations and evaluation metrics
-- `requirements.txt`: Required Python packages
-- `environment.yml`: Conda environment configuration
-- `run_pipeline.py`: Script to execute the entire analysis pipeline
-- `install.sh`: Installation script
+# 3. Project Structure
+```
+Time_Series_Analysis-Prophet/
+├── images/              # Directory for generated visualizations
+├── simple_prophet.py    # Main script for forecasting
+├── requirements.txt     # Python dependencies
+├── .gitignore          # Git ignore rules
+└── README.md           # Project documentation
+```
 
-## 2. Setup
-
+# 4. Installation
 ```bash
-# Option 1: Quick setup with install script
-chmod +x install.sh
-./install.sh
-
-# Option 2: Manual setup with pip
+# Install required packages
 pip install -r requirements.txt
-
-# Option 3: Setup with conda
-conda env create -f environment.yml
-conda activate TSAP
 ```
 
-## 3. Usage
-
-### Running the Complete Pipeline
-
-To execute the entire analysis pipeline (data download, model training, and visualization):
-
+# 5. Usage
+Run the script with default settings (Apple stock data):
 ```bash
-python run_pipeline.py
+python simple_prophet.py
 ```
 
-### Exploring the Analysis in Jupyter Notebook
+The script will:
+1. Download Apple (AAPL) stock data from 2020 onwards
+2. Create a forecast for the next 30 days
+3. Generate two visualization files in the `images` directory:
+   - `apple_stock_forecast.png`: Shows actual prices and predictions
+   - `apple_stock_components.png`: Shows trend components
 
-```bash
-jupyter notebook notebooks/time_series_analysis_with_prophet.ipynb
-```
+# 6. Dependencies
+- pandas
+- matplotlib
+- prophet
+- yfinance
+- numpy
 
-## 4. Dataset
+# 7. Output
+The script generates two types of visualizations:
+1. Forecast Plot
+   - Blue line: Historical stock prices
+   - Red line: Predicted prices
+   - Red shaded area: Prediction uncertainty range
 
-This project uses the Airline Passengers dataset, which contains monthly totals of international airline passengers from 1949 to 1960. The dataset exhibits both trend and seasonality components, making it ideal for time series forecasting demonstrations.
+2. Components Plot
+   - Trend: Overall price movement
+   - Yearly: Yearly seasonal patterns
+   - Weekly: Weekly seasonal patterns
 
-## 5. Results
+## 8. Customization
 
-The Prophet model achieved excellent performance on this dataset:
+You can easily modify the scripts to:
 
-- Mean Absolute Error (MAE): 8.00
-- Root Mean Squared Error (RMSE): 10.33
-- Mean Absolute Percentage Error (MAPE): 3.34%
-- R²: 0.9925
+- Forecast different stocks by changing the ticker symbol
+- Adjust forecast periods (default is 90 days)
+- Modify model parameters like seasonality and changepoint flexibility
+- Create your own custom scenarios
 
-Key visualizations from the analysis:
+## 9. Resources and Documentation
 
-1. **Forecast Plot**: Shows the model's predictions with confidence intervals
-2. **Components Plot**: Breaks down the forecast into trend and seasonal components
-3. **Forecast vs Actual**: Compares predicted values against actual values with residuals
-4. **Future Forecast Table**: Detailed monthly predictions for future periods
+- **Prophet Documentation**:
+  - [Quick Start Guide](https://facebook.github.io/prophet/docs/quick_start.html)
+  - [Installation Instructions](https://facebook.github.io/prophet/docs/installation.html)
+  - [Diagnostics and Validation](https://facebook.github.io/prophet/docs/diagnostics.html)
 
-All visualizations can be found in the `results/visualizations/` directory after running the pipeline.
+- **Prophet Research Paper**:
+  - [Prophet: Forecasting at Scale](https://peerj.com/preprints/3190/)
 
-## 6. License
+## 10. License
 
-This project is licensed under the terms included in the LICENSE file.
+This project is licensed under the MIT License. 

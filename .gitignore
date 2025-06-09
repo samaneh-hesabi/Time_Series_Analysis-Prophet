@@ -7,6 +7,31 @@
 
 tree.txt
 
+# Project-specific ignores
+# Ignore all data files but keep directories and .gitkeep files
+data/**/*.csv
+data/**/*.json
+data/**/*.xlsx
+data/**/*.parquet
+data/**/*.h5
+!data/**/.gitkeep
+
+# Ignore all model files but keep directories and .gitkeep files
+models/**/*.pkl
+models/**/*.h5
+models/**/*.csv
+models/**/*.json
+!models/**/.gitkeep
+
+# Ignore all result files but keep directories and .gitkeep files
+results/**/*.csv
+results/**/*.png
+results/**/*.jpg
+results/**/*.jpeg
+results/**/*.pdf
+results/**/*.html
+!results/**/.gitkeep
+
 # To prevent Zone.Identifier files
 *Zone.Identifier
 
@@ -380,3 +405,19 @@ results/visualizations/*
 
 # DS_Store
 .DS_Store
+
+# Prophet specific
+stan_model/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Images
+images/*.png
+images/*.jpg
+images/*.jpeg
+images/*.gif
+
+# Keep images directory structure
+!images/.gitkeep
